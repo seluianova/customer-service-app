@@ -1,7 +1,8 @@
+import Navbar from "./components/Navbar.tsx";
 
 const App = () => {
     return (
-      <div className='text-2xl p-2'>Test page</div>
+        <Navbar />
   )
 }
 
