@@ -36,10 +36,10 @@ const CustomerTable = () => {
                             <td className="border border-gray-300 px-4 py-2">{customer.dateOfBirth}</td>
                             <td className="border border-gray-300 px-4 py-2">{customer.loyalty.bonusCardNumber}</td>
                             <td className="border border-gray-300 px-4 py-2">
-                                <a href="/edit-customer.html" className="text-blue-500 hover:text-blue-700">
+                                <a href="/edit" className="text-blue-500 hover:text-blue-700">
                                     <PencilSquareIcon className="w-5 h-5 inline-block"/>
                                 </a>
-                                <a href="/delete-customer.html" className="text-blue-500 hover:text-blue-700 px-2">
+                                <a href="/delete" className="text-blue-500 hover:text-blue-700 px-2">
                                     <TrashIcon className="w-5 h-5 inline-block"/>
                                 </a>
                             </td>
