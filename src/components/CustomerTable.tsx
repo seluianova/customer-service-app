@@ -1,7 +1,7 @@
 import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/solid";
 import customers from "../data/customers.json"
 
-const CustomersTable = () => {
+const CustomerTable = () => {
     return (
         <div className="mt-4 overflow-x-auto">
             <table className="w-full border-collapse border border-gray-300 bg-white shadow-sm rounded-lg font-mono text-sm">
@@ -20,14 +20,15 @@ const CustomersTable = () => {
                 <tbody>
                 {customers.length === 0 ? (
                     <tr>
+                        { /** TODO bug = display less columns when no customers */ }
                         <td colSpan={8} className="border border-gray-300 px-4 py-4 text-center text-gray-500">
                             No customers found
                         </td>
                     </tr>
                 ) : (
-                    customers.map((customer, index) => (
-                        <tr key={index} className="hover:bg-gray-100">
-                            <td className="border border-gray-300 px-4 py-2">{index + 1}</td>
+                    customers.map((customer) => (
+                        <tr key={customer.id} className="hover:bg-gray-100">
+                            <td className="border border-gray-300 px-4 py-2">{customer.id}</td>
                             <td className="border border-gray-300 px-4 py-2">{customer.firstName}</td>
                             <td className="border border-gray-300 px-4 py-2">{customer.lastName}</td>
                             <td className="border border-gray-300 px-4 py-2">{customer.phoneNumber}</td>
@@ -51,4 +52,4 @@ const CustomersTable = () => {
     )
 }
 
-export default CustomersTable
+export default CustomerTable
