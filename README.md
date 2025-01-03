@@ -1,5 +1,15 @@
-# Customer service application
+# Sample React + Typescript + Vite application
 
-`npm install`
+### Install Dependencies
 
-`npm run dev`
+```bash
+npm install
+```
+
+### Run Vite Frontend
+
+React will run on http://localhost:3000
+
+```bash
+npm run dev
+```
