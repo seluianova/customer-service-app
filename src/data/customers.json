@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "firstName": "John",
+    "lastName": "Doe",
+    "phoneNumber": "+79991736222",
+    "email": "john.doe@gmail.com",
+    "dateOfBirth": "1990-01-12",
+    "loyalty": {
+      "bonusCardNumber": "384920",
+      "active": true,
+      "discountRate": 0.5
+    },
+    "updatedAt": "2023-10-11T12:08:42.114Z",
+    "createdAt": "2023-10-11T12:08:42.114Z"
+  },
+  {
+    "id": 2,
+    "firstName": "Max",
+    "lastName": "Mustermann",
+    "phoneNumber": "+79182443142",
+    "email": "max.mustermann@gmail.com",
+    "dateOfBirth": "1987-02-01",
+    "loyalty": {
+      "bonusCardNumber": "384921",
+      "active": false,
+      "discountRate": 0.5
+    },
+    "updatedAt": "2023-10-11T12:08:42.114Z",
+    "createdAt": "2023-10-15T12:09:31.192Z"
+  }
+]
