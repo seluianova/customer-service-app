@@ -2,7 +2,7 @@ import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/solid";
 import {useEffect, useState} from "react";
 
 const CustomerTable = () => {
-    const [ customers, setCustomers] = useState([]);
+    const [ customers, setCustomers] = useState<Customer[]>([]);
     const [ loading, setLoading ] = useState(true);
 
     useEffect(() => {
