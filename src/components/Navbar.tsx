@@ -1,7 +1,11 @@
 import logo from '../assets/images/users.svg'
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = ({ title = 'Customer Service' }) => {
+    const linkClass = ({ isActive }: { isActive: boolean }) => isActive ?
+        "inline-block text-white rounded-lg px-4 py-2 bg-black hover:bg-gray-800" :
+        "inline-block text-white rounded-lg px-4 py-2 bg-sky-700 hover:bg-gray-800";
+
     return (
         <nav className="bg-sky-900 border-b border-indigo-500">
             <div className="container-xl lg:container m-auto">
@@ -11,8 +15,8 @@ const Navbar = ({ title = 'Customer Service' }) => {
                         <span className="text-white text-2xl font-bold ml-2 px-3 py-2">{title}</span>
                         <div className="md:ml-auto">
                             <div className="flex space-x-2">
-                                <Link to="/" className="inline-block text-white rounded-lg px-4 py-2 bg-black hover:bg-gray-800">Home</Link>
-                                <Link to="/add" className="inline-block text-white rounded-lg px-4 py-2 bg-sky-700 hover:bg-gray-800">Add customer</Link>
+                                <NavLink to="/" className={linkClass}>Home</NavLink>
+                                <NavLink to="/add" className={linkClass}>Add customer</NavLink>
                             </div>
                         </div>
                     </div>
