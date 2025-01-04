@@ -1,7 +1,25 @@
 import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/solid";
-import customers from "../data/customers.json"
+import {useEffect, useState} from "react";
 
 const CustomerTable = () => {
+    const [ customers, setCustomers] = useState([]);
+    const [ loading, setLoading ] = useState(true);
+
+    useEffect(() => {
+        const fetchCustomers = async () => {
+            try {
+                const res = await fetch("http://localhost:8000/customers");
+                const data = await res.json();
+                setCustomers(data);
+            } catch (error) {
+                console.log("Error fetching data", error);
+            } finally {
+                setLoading(false);
+            }
+        }
+        fetchCustomers();
+    }, []);
+
     return (
         <div className="mt-4 overflow-x-auto">
             <table className="w-full border-collapse border border-gray-300 bg-white shadow-sm rounded-lg font-mono text-sm">
@@ -18,9 +36,16 @@ const CustomerTable = () => {
                 </tr>
                 </thead>
                 <tbody>
-                {customers.length === 0 ? (
+                {loading && (
                     <tr>
-                        { /** TODO bug = display less columns when no customers */ }
+                        <td colSpan={8} className="border border-gray-300 px-4 py-4 text-center text-gray-500">
+                            Loading...
+                        </td>
+                    </tr>
+                )}
+                {!loading && customers.length === 0 ? (
+                    <tr>
+                        { /** TODO bug = display less columns when no customers */}
                         <td colSpan={8} className="border border-gray-300 px-4 py-4 text-center text-gray-500">
                             No customers found
                         </td>
