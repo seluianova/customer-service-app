@@ -1,5 +1,5 @@
 import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/solid";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 const CustomerTable = () => {
     const [ customers, setCustomers] = useState<Customer[]>([]);
@@ -8,7 +8,7 @@ const CustomerTable = () => {
     useEffect(() => {
         const fetchCustomers = async () => {
             try {
-                const res = await fetch("http://localhost:8000/customers");
+                const res = await fetch("/api/customers?_limit=10");
                 const data = await res.json();
                 setCustomers(data);
             } catch (error) {
