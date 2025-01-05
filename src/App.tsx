@@ -7,6 +7,7 @@ import {
 import HomePage from "./pages/HomePage.tsx";
 import MainLayout from "./layouts/MainLayout.tsx";
 import AddCustomerPage from "./pages/AddCustomerPage.tsx";
+import CustomerDetailsPage from "./pages/CustomerDetailsPage.tsx";
 import NotFoundPage from "./pages/NotFoundPage.tsx";
 
 const router = createBrowserRouter(
@@ -14,6 +15,7 @@ const router = createBrowserRouter(
         <Route path="/" element={<MainLayout />}>
             <Route index element={<HomePage />} />
             <Route path="/add" element={<AddCustomerPage />} />
+            <Route path="/customers/:id" element={<CustomerDetailsPage />} />
             <Route path="*" element={<NotFoundPage />} />
         </Route>
     )

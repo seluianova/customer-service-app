@@ -1,5 +1,6 @@
-import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/solid";
+import { InformationCircleIcon, PencilSquareIcon, TrashIcon } from "@heroicons/react/24/solid";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const CustomerTable = () => {
     const [ customers, setCustomers] = useState<Customer[]>([]);
@@ -61,12 +62,15 @@ const CustomerTable = () => {
                             <td className="border border-gray-300 px-4 py-2">{customer.dateOfBirth}</td>
                             <td className="border border-gray-300 px-4 py-2">{customer.loyalty.bonusCardNumber}</td>
                             <td className="border border-gray-300 px-4 py-2">
-                                <a href="/edit" className="text-blue-500 hover:text-blue-700">
+                                <Link to={`/customers/${customer.id}`} className="text-blue-500 hover:text-blue-700">
+                                    <InformationCircleIcon className="w-5 h-5 inline-block"/>
+                                </Link>
+                                <Link to="/edit" className="text-blue-500 hover:text-blue-700 px-2">
                                     <PencilSquareIcon className="w-5 h-5 inline-block"/>
-                                </a>
-                                <a href="/delete" className="text-blue-500 hover:text-blue-700 px-2">
+                                </Link>
+                                <Link to="/delete" className="text-blue-500 hover:text-blue-700">
                                     <TrashIcon className="w-5 h-5 inline-block"/>
-                                </a>
+                                </Link>
                             </td>
                         </tr>
                     ))

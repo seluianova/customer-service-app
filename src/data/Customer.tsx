@@ -7,5 +7,9 @@ interface Customer {
     dateOfBirth: string;
     loyalty: {
         bonusCardNumber: string;
+        active: boolean;
+        discountRate: number;
     };
+    createdAt: Date;
+    updatedAt: Date;
 }
