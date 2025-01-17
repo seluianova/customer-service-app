@@ -1,30 +1,19 @@
-import {useEffect, useState} from "react";
-import {Link, useParams} from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
+import CustomerActionsPanel from "../components/CustomerActionsPanel.tsx";
+
+const customerLoader = async ({ params }) => {
+    const res = await fetch(`/api/customers/${params.id}`);
+    return await res.json();
+}
 
 const CustomerDetailsPage = () => {
-    const {id} = useParams();
-    const [customer, setCustomer] = useState<Customer|null>(null);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchCustomer = async () => {
-            try {
-                const res = await fetch(`/api/customers/${id}`);
-                const data = await res.json();
-                setCustomer(data);
-            } catch (error) {
-                console.log("Error fetching data", error);
-            } finally {
-                setLoading(false);
-            }
-        }
-        fetchCustomer();
-    }, []);
+    const { id } = useParams();
+    const customer = useLoaderData();
 
     return (
         <section className="py-4">
             <div className="container-xl lg:container m-auto">
-                <div className="grid grid-cols-1 gap-4 p-4 rounded-lg">
+                <div className="grid grid-cols-[3fr_1fr] gap-4 p-4 rounded-lg">
                     <div className="bg-gray-100 p-6 rounded-lg shadow-md">
                         <div className="flex justify-between items-center">
                             <h2 className="text-2xl font-bold">Customer Details</h2>
@@ -35,11 +24,7 @@ const CustomerDetailsPage = () => {
                                 </div>
                             )}
                         </div>
-                        {loading ? (
-                            <div className="border border-gray-300 px-4 py-4 text-center text-gray-500">
-                                Loading...
-                            </div>
-                        ) : customer ? (
+                        { customer && (
                             <div>
                                 { /** Personal data */}
                                 <hr className="my-4 border-gray-300"/>
@@ -95,17 +80,11 @@ const CustomerDetailsPage = () => {
                                     </div>
                                 </div>
                                 <hr className="my-4 border-gray-300"/>
-                                <div className="text-center flex space-x-2 justify-center items-center">
-                                    <Link
-                                        to="/"
-                                        className="inline-block text-white rounded-lg px-4 py-2 bg-sky-700 hover:bg-gray-800"
-                                    >Go Back
-                                    </Link>
-                                </div>
                             </div>
-                        ) : (
-                            <div className="text-gray-500 text-center mt-4">Customer not found</div>
                         )}
+                    </div>
+                    <div>
+                        <CustomerActionsPanel />
                     </div>
                 </div>
             </div>
@@ -113,4 +92,4 @@ const CustomerDetailsPage = () => {
     );
 };
 
-export default CustomerDetailsPage
+export { CustomerDetailsPage as default, customerLoader };
