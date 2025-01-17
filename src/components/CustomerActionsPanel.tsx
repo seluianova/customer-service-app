@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 
 const CustomerActionsPanel = () => {
-    return <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+    return <div className="bg-white p-6 rounded-lg shadow-md">
         <div className="flex justify-between items-center">
             <h2 className="text-2xl font-bold">Actions</h2>
         </div>

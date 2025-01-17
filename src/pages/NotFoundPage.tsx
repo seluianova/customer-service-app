@@ -6,7 +6,7 @@ const NotFoundPage = () => {
         <section className="text-center flex flex-col justify-center items-center py-6">
             <div className="container-xl lg:container m-auto">
                 <div className="grid grid-cols-1 p-4 rounded-lg">
-                    <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+                    <div className="bg-white p-6 rounded-lg shadow-md">
                         <ExclamationTriangleIcon className="w-28 p-4 mx-auto text-yellow-500"/>
                         <h1 className="text-xl font-bold mb-4">404 Not Found</h1>
                         <p className="mb-5">This page does not exist</p>
