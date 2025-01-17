@@ -6,7 +6,7 @@
       "lastName": "Doe",
       "phoneNumber": "+79991736222",
       "email": "john.doe@gmail.com",
-      "dateOfBirth": "1990-01-12",
+      "birthDate": "1990-01-12",
       "loyalty": {
         "bonusCardNumber": "384920",
         "active": true,
@@ -21,7 +21,7 @@
       "lastName": "Mustermann",
       "phoneNumber": "+79182443142",
       "email": "max.mustermann@gmail.com",
-      "dateOfBirth": "1987-02-01",
+      "birthDate": "1987-02-01",
       "loyalty": {
         "bonusCardNumber": "384921",
         "active": false,
