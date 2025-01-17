@@ -59,7 +59,7 @@ const CustomerTable = () => {
                             <td className="border border-gray-300 px-4 py-2">{customer.lastName}</td>
                             <td className="border border-gray-300 px-4 py-2">{customer.phoneNumber}</td>
                             <td className="border border-gray-300 px-4 py-2">{customer.email}</td>
-                            <td className="border border-gray-300 px-4 py-2">{customer.dateOfBirth}</td>
+                            <td className="border border-gray-300 px-4 py-2">{customer.birthDate.toLocaleString()}</td>
                             <td className="border border-gray-300 px-4 py-2">{customer.loyalty.bonusCardNumber}</td>
                             <td className="border border-gray-300 px-4 py-2">
                                 <Link to={`/customers/${customer.id}`} className="text-blue-500 hover:text-blue-700">

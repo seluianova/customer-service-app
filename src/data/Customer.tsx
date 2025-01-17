@@ -4,12 +4,8 @@ interface Customer {
     lastName: string;
     phoneNumber: string;
     email: string;
-    dateOfBirth: string;
-    loyalty: {
-        bonusCardNumber: string;
-        active: boolean;
-        discountRate: number;
-    };
+    birthDate: Date;
+    loyalty: Loyalty;
     createdAt: Date;
     updatedAt: Date;
 }
